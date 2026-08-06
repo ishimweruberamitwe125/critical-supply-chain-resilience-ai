@@ -1,0 +1,5 @@
+node_id,name,node_type,region,capacity_units_per_month
+FAC-001,Alpha Fab Plant,factory,USA-West,120000
+FAC-002,Beta Assembly Plant,factory,USA-East,95000
+FAC-003,Gamma Test Plant,factory,Germany,80000
+DIST-001,North America Distribution Hub,distribution,USA-Central,250000
