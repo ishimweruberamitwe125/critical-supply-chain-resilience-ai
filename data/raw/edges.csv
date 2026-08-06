@@ -1,0 +1,15 @@
+edge_id,source_id,target_id,material,lead_time_days,capacity_units_per_month,cost_per_unit,is_single_source
+EDGE-001,SUP-001,FAC-001,silicon_wafers,21,130000,42.50,true
+EDGE-002,SUP-002,FAC-001,photoresist,14,140000,8.75,false
+EDGE-003,SUP-003,FAC-001,industrial_gases,10,160000,3.20,false
+EDGE-004,SUP-006,FAC-001,etching_chemicals,12,150000,6.10,false
+EDGE-005,SUP-001,FAC-002,silicon_wafers,21,110000,43.00,true
+EDGE-006,SUP-004,FAC-002,chip_packaging,18,100000,11.40,true
+EDGE-007,SUP-005,FAC-002,copper_foil,25,90000,9.80,false
+EDGE-008,SUP-007,FAC-002,pcb_substrates,16,105000,7.60,false
+EDGE-009,SUP-008,FAC-003,rare_earth_materials,30,85000,15.25,true
+EDGE-010,SUP-002,FAC-003,photoresist,14,95000,8.90,false
+EDGE-011,SUP-003,FAC-003,industrial_gases,10,98000,3.35,false
+EDGE-012,FAC-001,DIST-001,finished_chips,5,115000,2.10,false
+EDGE-013,FAC-002,DIST-001,finished_chips,6,90000,2.40,false
+EDGE-014,FAC-003,DIST-001,finished_chips,7,75000,2.65,false

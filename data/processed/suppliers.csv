@@ -1,0 +1,9 @@
+supplier_id,name,component,country,reliability_score,lead_time_days,geopolitical_risk
+SUP-001,Pacific Silicon Co.,silicon_wafers,Taiwan,0.92,21,0.35
+SUP-002,Nordic Litho Systems,photoresist,Netherlands,0.88,14,0.18
+SUP-003,Atlas Gas Materials,industrial_gases,USA,0.95,10,0.12
+SUP-004,Dragon Packaging Ltd.,chip_packaging,China,0.81,18,0.42
+SUP-005,Andes Copper Foil,copper_foil,Chile,0.86,25,0.22
+SUP-006,Rhine Chemicals GmbH,etching_chemicals,Germany,0.90,12,0.15
+SUP-007,Sunrise PCB Solutions,pcb_substrates,South Korea,0.87,16,0.28
+SUP-008,Blue Ridge Rare Earths,rare_earth_materials,USA,0.84,30,0.20
