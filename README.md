@@ -234,16 +234,16 @@ The repository includes static dashboard visuals under `docs/images/`. You can v
 
 **Option A — View images already in the repo**
 
-Open these files locally or view them in the GitHub README:
+Open these PNG files locally or view them in the GitHub README (PNG is used because GitHub does not reliably render SVG in README files):
 
 | File | Description |
 |------|-------------|
 | `docs/images/web_dashboard_preview.png` | Streamlit dashboard preview |
-| `docs/images/dashboard_overview.svg` | Executive KPI overview |
-| `docs/images/supplier_risk_chart.svg` | Supplier disruption risk |
-| `docs/images/simulation_impact.svg` | Baseline vs disrupted throughput |
-| `docs/images/demand_forecast.svg` | Distribution hub demand forecast |
-| `docs/images/supply_network_graph.svg` | Supply network topology |
+| `docs/images/dashboard_overview.png` | Executive KPI overview |
+| `docs/images/supplier_risk_chart.png` | Supplier disruption risk |
+| `docs/images/simulation_impact.png` | Baseline vs disrupted throughput |
+| `docs/images/demand_forecast.png` | Distribution hub demand forecast |
+| `docs/images/supply_network_graph.png` | Supply network topology |
 
 **Option B — Regenerate PNG charts from live prototype data**
 
@@ -298,23 +298,23 @@ Visual outputs from the prototype decision-support platform.
 
 **Executive Overview**
 
-![Executive Overview Dashboard](docs/images/dashboard_overview.svg)
+![Executive Overview Dashboard](docs/images/dashboard_overview.png)
 
 **Supplier Disruption Risk**
 
-![Supplier Risk Dashboard](docs/images/supplier_risk_chart.svg)
+![Supplier Risk Dashboard](docs/images/supplier_risk_chart.png)
 
 **Disruption Simulation Impact**
 
-![Simulation Impact Dashboard](docs/images/simulation_impact.svg)
+![Simulation Impact Dashboard](docs/images/simulation_impact.png)
 
 **Demand Forecast**
 
-![Demand Forecast Dashboard](docs/images/demand_forecast.svg)
+![Demand Forecast Dashboard](docs/images/demand_forecast.png)
 
 **Supply Network Topology**
 
-![Supply Network Graph](docs/images/supply_network_graph.svg)
+![Supply Network Graph](docs/images/supply_network_graph.png)
 
 **Prototype Scope vs Planned Scope**
 

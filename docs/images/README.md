@@ -2,18 +2,30 @@
 
 Static and generated dashboard visuals for the **Critical Supply Chain Resilience AI** prototype.
 
-## Files in this folder
+## PNG files (recommended for GitHub README)
 
-| File | Type | Description |
-|------|------|-------------|
-| `web_dashboard_preview.png` | PNG | Streamlit dashboard preview |
-| `dashboard_overview.svg` | SVG | Executive KPI overview |
-| `supplier_risk_chart.svg` | SVG | Supplier disruption risk tiers |
-| `simulation_impact.svg` | SVG | Baseline vs disrupted throughput |
-| `demand_forecast.svg` | SVG | Distribution hub demand forecast |
-| `supply_network_graph.svg` | SVG | Supply network topology |
+GitHub does not reliably render SVG images in README files. Use the PNG files below for documentation and presentations.
 
-## How to generate PNG charts from live data
+| File | Description |
+|------|-------------|
+| `web_dashboard_preview.png` | Streamlit dashboard preview |
+| `dashboard_overview.png` | Executive KPI overview |
+| `supplier_risk_chart.png` | Supplier disruption risk tiers |
+| `simulation_impact.png` | Baseline vs disrupted throughput |
+| `demand_forecast.png` | Distribution hub demand forecast |
+| `supply_network_graph.png` | Supply network topology |
+
+## SVG files (optional local use)
+
+SVG versions are also available for local viewing and editing:
+
+- `dashboard_overview.svg`
+- `supplier_risk_chart.svg`
+- `simulation_impact.svg`
+- `demand_forecast.svg`
+- `supply_network_graph.svg`
+
+## How to regenerate PNG charts from live pipeline data
 
 1. Set up the project (from the repository root):
 
@@ -31,14 +43,7 @@ python scripts/prepare_energy_data.py
 python scripts/generate_dashboard_images.py
 ```
 
-3. Output PNG files:
-
-- `dashboard_overview.png`
-- `supplier_risk_chart.png`
-- `simulation_impact.png`
-- `demand_forecast.png`
-- `supply_network_graph.png`
-- `web_dashboard_preview.png`
+This overwrites the PNG files listed above using live prototype analytics output.
 
 ## Interactive dashboard
 
