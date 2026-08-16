@@ -1,0 +1,5 @@
+node_id,name,node_type,region,capacity_units_per_month
+EFAC-001,Great Lakes Transformer Plant,factory,USA-Midwest,4500
+EFAC-002,Gulf Coast Grid Assembly,factory,USA-South,3800
+EFAC-003,Rockies Energy Equipment Plant,factory,USA-West,3200
+EDIST-001,National Grid Deployment Hub,distribution,USA-Central,9000

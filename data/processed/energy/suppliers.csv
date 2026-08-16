@@ -1,0 +1,9 @@
+supplier_id,name,component,country,reliability_score,lead_time_days,geopolitical_risk
+ESUP-001,GridSteel Industries,transformer_steel,USA,0.93,18,0.10
+ESUP-002,Volta Copper Works,copper_conductors,Chile,0.87,22,0.20
+ESUP-003,Northern Insulation Co.,high_voltage_insulation,Canada,0.91,15,0.12
+ESUP-004,Helios Control Systems,grid_control_software,Germany,0.89,12,0.14
+ESUP-005,Pacific Rare Magnetics,permanent_magnets,China,0.80,28,0.44
+ESUP-006,Atlantic Composite Parts,composite_housings,USA,0.88,16,0.11
+ESUP-007,Global Bearing Supply,industrial_bearings,Japan,0.92,14,0.18
+ESUP-008,SolarCell Materials,solar_grade_silicon,South Korea,0.85,24,0.26

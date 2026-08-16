@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#f8fafc"/>
+  <text x="400" y="40" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Distribution Hub Demand Forecast</text>
+  <polyline points="100,350 250,320 400,290" fill="none" stroke="#2563eb" stroke-width="4"/>
+  <circle cx="100" cy="350" r="7" fill="#2563eb"/><circle cx="250" cy="320" r="7" fill="#2563eb"/><circle cx="400" cy="290" r="7" fill="#2563eb"/>
+  <text x="100" y="380" text-anchor="middle" font-size="12">Month 1</text>
+  <text x="250" y="380" text-anchor="middle" font-size="12">Month 2</text>
+  <text x="400" y="380" text-anchor="middle" font-size="12">Month 3</text>
+  <line x1="80" y1="400" x2="450" y2="400" stroke="#cbd5e1"/>
+  <line x1="80" y1="400" x2="80" y2="120" stroke="#cbd5e1"/>
+</svg>

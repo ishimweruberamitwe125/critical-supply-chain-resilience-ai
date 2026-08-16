@@ -13,6 +13,9 @@ ortools>=9.8.0
 # Visualization and notebooks
 matplotlib>=3.8.0
 jupyter>=1.0.0
+streamlit>=1.32.0
+plotly>=5.20.0
+python-pptx>=1.0.2
 
 # Development
 pytest>=8.0.0

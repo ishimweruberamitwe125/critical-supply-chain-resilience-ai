@@ -1,0 +1,15 @@
+edge_id,source_id,target_id,material,lead_time_days,capacity_units_per_month,cost_per_unit,is_single_source
+EEDGE-001,ESUP-001,EFAC-001,transformer_steel,18,5000,1250.00,true
+EEDGE-002,ESUP-002,EFAC-001,copper_conductors,22,4800,890.00,false
+EEDGE-003,ESUP-003,EFAC-001,high_voltage_insulation,15,5200,420.00,false
+EEDGE-004,ESUP-004,EFAC-001,grid_control_software,12,5100,3100.00,true
+EEDGE-005,ESUP-001,EFAC-002,transformer_steel,18,4200,1275.00,true
+EEDGE-006,ESUP-005,EFAC-002,permanent_magnets,28,3600,980.00,true
+EEDGE-007,ESUP-006,EFAC-002,composite_housings,16,4000,560.00,false
+EEDGE-008,ESUP-007,EFAC-002,industrial_bearings,14,3900,210.00,false
+EEDGE-009,ESUP-008,EFAC-003,solar_grade_silicon,24,3400,1450.00,true
+EEDGE-010,ESUP-003,EFAC-003,high_voltage_insulation,15,3500,435.00,false
+EEDGE-011,ESUP-004,EFAC-003,grid_control_software,12,3300,3150.00,false
+EEDGE-012,EFAC-001,EDIST-001,grid_transformers,8,4300,5200.00,false
+EEDGE-013,EFAC-002,EDIST-001,grid_transformers,9,3600,5350.00,false
+EEDGE-014,EFAC-003,EDIST-001,solar_inverters,10,3000,4100.00,false

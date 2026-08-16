@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#f8fafc"/>
+  <text x="600" y="40" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Semiconductor Supply Network Topology</text>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#94a3b8"/></marker>
+  </defs>
+  <line x1="180" y1="120" x2="420" y2="280" stroke="#94a3b8" marker-end="url(#arrow)"/>
+  <line x1="180" y1="180" x2="420" y2="300" stroke="#94a3b8" marker-end="url(#arrow)"/>
+  <line x1="180" y1="240" x2="420" y2="320" stroke="#94a3b8" marker-end="url(#arrow)"/>
+  <line x1="180" y1="300" x2="620" y2="320" stroke="#94a3b8" marker-end="url(#arrow)"/>
+  <line x1="180" y1="360" x2="620" y2="340" stroke="#94a3b8" marker-end="url(#arrow)"/>
+  <line x1="180" y1="420" x2="820" y2="340" stroke="#94a3b8" marker-end="url(#arrow)"/>
+  <line x1="180" y1="480" x2="620" y2="360" stroke="#94a3b8" marker-end="url(#arrow)"/>
+  <line x1="180" y1="540" x2="620" y2="380" stroke="#94a3b8" marker-end="url(#arrow)"/>
+  <line x1="180" y1="600" x2="820" y2="360" stroke="#94a3b8" marker-end="url(#arrow)"/>
+  <line x1="420" y1="300" x2="980" y2="420" stroke="#94a3b8" marker-end="url(#arrow)"/>
+  <line x1="620" y1="340" x2="980" y2="440" stroke="#94a3b8" marker-end="url(#arrow)"/>
+  <line x1="820" y1="350" x2="980" y2="460" stroke="#94a3b8" marker-end="url(#arrow)"/>
+  <circle cx="120" cy="360" r="42" fill="#2563eb"/><text x="120" y="366" text-anchor="middle" fill="#fff" font-size="12">Suppliers</text>
+  <circle cx="500" cy="320" r="48" fill="#059669"/><text x="500" y="326" text-anchor="middle" fill="#fff" font-size="12">Alpha Fab</text>
+  <circle cx="700" cy="350" r="48" fill="#059669"/><text x="700" y="356" text-anchor="middle" fill="#fff" font-size="12">Beta Fab</text>
+  <circle cx="860" cy="350" r="48" fill="#059669"/><text x="860" y="356" text-anchor="middle" fill="#fff" font-size="12">Gamma Fab</text>
+  <circle cx="1040" cy="440" r="52" fill="#d97706"/><text x="1040" y="446" text-anchor="middle" fill="#fff" font-size="12">Hub</text>
+  <rect x="980" y="80" width="16" height="16" fill="#2563eb"/><text x="1005" y="93" font-size="12">Supplier</text>
+  <rect x="980" y="110" width="16" height="16" fill="#059669"/><text x="1005" y="123" font-size="12">Factory</text>
+  <rect x="980" y="140" width="16" height="16" fill="#d97706"/><text x="1005" y="153" font-size="12">Distribution</text>
+</svg>

@@ -85,7 +85,11 @@ critical-supply-chain-resilience-ai
 ├── CONTRIBUTING.md
 ├── requirements.txt
 │
+├── dashboard
+│   └── app.py
+│
 ├── docs
+│   ├── images
 │   ├── architecture.md
 │   ├── methodology.md
 │   ├── policy-impact.md
@@ -113,6 +117,9 @@ critical-supply-chain-resilience-ai
 │   ├── resilience_metrics
 │   │    ├── risk_index.py
 │   │
+│   ├── visualization
+│   │    └── dashboard_charts.py
+│   │
 │   └── utils
 │
 ├── notebooks
@@ -121,7 +128,58 @@ critical-supply-chain-resilience-ai
 │
 └── examples
    ├── semiconductor_supply_chain_demo.py
+   └── week1_network_overview.py
 ```
+
+**Prototype Demo**
+
+The repository includes a working prototype pipeline for the semiconductor case study:
+
+```bash
+python examples/semiconductor_supply_chain_demo.py
+```
+
+**Web Dashboard**
+
+Launch the interactive Streamlit dashboard with **Plotly charts** and an industry selector (Semiconductor / Energy):
+
+```bash
+streamlit run dashboard/app.py
+```
+
+![Web Dashboard Preview](docs/images/web_dashboard_preview.png)
+
+**Jupyter Case Studies**
+
+```bash
+jupyter notebook notebooks/semiconductor_case_study.ipynb
+jupyter notebook notebooks/energy_supply_chain_analysis.ipynb
+```
+
+**Grant & Research Presentation**
+
+Generate a PowerPoint deck with dashboard visuals for researchers and funders:
+
+```bash
+python scripts/generate_all_assets.py
+```
+
+Output: `docs/presentations/Critical_Supply_Chain_Resilience_AI.pptx`
+
+**Dashboard Images**
+
+Static charts for docs and presentations live in `docs/images/`. Regenerate PNGs from live pipeline data:
+
+```bash
+python scripts/generate_dashboard_images.py
+```
+
+| Dashboard | Preview |
+|-----------|---------|
+| Executive Overview | ![Overview](docs/images/dashboard_overview.svg) |
+| Supplier Risk | ![Supplier Risk](docs/images/supplier_risk_chart.svg) |
+| Simulation Impact | ![Simulation](docs/images/simulation_impact.svg) |
+| Network Topology | ![Network](docs/images/supply_network_graph.svg) |
 
 **Technologies Used**
 
@@ -134,6 +192,9 @@ The project uses modern data science and optimization tools, including:
 - NetworkX
 - Google OR-Tools
 - Jupyter Notebooks
+- Streamlit
+- Plotly
+- python-pptx
 
 **Example Applications**
 

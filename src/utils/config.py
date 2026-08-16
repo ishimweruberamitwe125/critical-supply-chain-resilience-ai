@@ -13,6 +13,11 @@ PREDICTIVE_MODELS_DIR = MODELS_DIR / "predictive_models"
 OPTIMIZATION_MODELS_DIR = MODELS_DIR / "optimization_models"
 
 DEFAULT_NETWORK_NAME = "semiconductor_mini_network"
+ENERGY_NETWORK_NAME = "energy_mini_network"
+
+SEMICONDUCTOR_DATA_DIR = PROCESSED_DATA_DIR
+ENERGY_DATA_DIR = PROCESSED_DATA_DIR / "energy"
+ENERGY_RAW_DATA_DIR = RAW_DATA_DIR / "energy"
 
 SUPPLIERS_FILE = "suppliers.csv"
 NODES_FILE = "nodes.csv"
