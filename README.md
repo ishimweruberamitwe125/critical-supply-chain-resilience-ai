@@ -131,55 +131,134 @@ critical-supply-chain-resilience-ai
    └── week1_network_overview.py
 ```
 
-**Prototype Demo**
+**How to Run the Prototype**
 
-The repository includes a working prototype pipeline for the semiconductor case study:
+Follow these steps to set up and run the full decision-support prototype on your machine.
+
+**Prerequisites**
+
+- Python 3.10 or newer
+- Git
+- Internet access (to install packages)
+
+**Step 1 — Clone the repository**
+
+```bash
+git clone https://github.com/ishimweruberamitwe125/critical-supply-chain-resilience-ai.git
+cd critical-supply-chain-resilience-ai
+```
+
+**Step 2 — Create and activate a virtual environment**
+
+Windows (PowerShell):
+
+```powershell
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+macOS / Linux:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+**Step 3 — Install dependencies**
+
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+**Step 4 — Prepare sample datasets**
+
+```bash
+python scripts/prepare_week1_data.py
+python scripts/prepare_energy_data.py
+```
+
+**Step 5 — Run the command-line prototype demo**
 
 ```bash
 python examples/semiconductor_supply_chain_demo.py
 ```
 
-**Web Dashboard**
+This runs the full pipeline: graph → metrics → prediction → simulation → optimization and prints a report in the terminal.
 
-Launch the interactive Streamlit dashboard with **Plotly charts** and an industry selector (Semiconductor / Energy):
+**Step 6 — Launch the interactive web dashboard**
 
 ```bash
 streamlit run dashboard/app.py
 ```
 
-![Web Dashboard Preview](docs/images/web_dashboard_preview.png)
+Your browser will open the dashboard. Use the sidebar to switch between **Semiconductor** and **Energy Infrastructure** networks. Explore tabs for risk analysis, simulations, mitigations, network map, and demand forecast.
 
-**Jupyter Case Studies**
+**Step 7 — Open Jupyter case studies (optional)**
 
 ```bash
 jupyter notebook notebooks/semiconductor_case_study.ipynb
 jupyter notebook notebooks/energy_supply_chain_analysis.ipynb
 ```
 
-**Grant & Research Presentation**
+**Step 8 — Run tests (optional)**
 
-Generate a PowerPoint deck with dashboard visuals for researchers and funders:
+```bash
+pytest tests/ -v
+```
+
+**Step 9 — Generate dashboard images and grant presentation (optional)**
 
 ```bash
 python scripts/generate_all_assets.py
 ```
 
-Output: `docs/presentations/Critical_Supply_Chain_Resilience_AI.pptx`
+This creates PNG charts in `docs/images/` and a PowerPoint deck at `docs/presentations/Critical_Supply_Chain_Resilience_AI.pptx`.
 
-**Dashboard Images**
+**Quick Reference**
 
-Static charts for docs and presentations live in `docs/images/`. Regenerate PNGs from live pipeline data:
+| Goal | Command |
+|------|---------|
+| Terminal demo | `python examples/semiconductor_supply_chain_demo.py` |
+| Web dashboard | `streamlit run dashboard/app.py` |
+| Semiconductor notebook | `jupyter notebook notebooks/semiconductor_case_study.ipynb` |
+| Energy notebook | `jupyter notebook notebooks/energy_supply_chain_analysis.ipynb` |
+| Run tests | `pytest tests/ -v` |
+| Generate slides | `python scripts/generate_all_assets.py` |
+
+**Dashboard Gallery**
+
+Visual outputs from the prototype decision-support platform.
+
+**Web Dashboard (Streamlit + Plotly)**
+
+![Web Dashboard Preview](docs/images/web_dashboard_preview.png)
+
+**Executive Overview**
+
+![Executive Overview Dashboard](docs/images/dashboard_overview.svg)
+
+**Supplier Disruption Risk**
+
+![Supplier Risk Dashboard](docs/images/supplier_risk_chart.svg)
+
+**Disruption Simulation Impact**
+
+![Simulation Impact Dashboard](docs/images/simulation_impact.svg)
+
+**Demand Forecast**
+
+![Demand Forecast Dashboard](docs/images/demand_forecast.svg)
+
+**Supply Network Topology**
+
+![Supply Network Graph](docs/images/supply_network_graph.svg)
+
+Regenerate high-resolution PNG versions from live pipeline data:
 
 ```bash
 python scripts/generate_dashboard_images.py
 ```
-
-| Dashboard | Preview |
-|-----------|---------|
-| Executive Overview | ![Overview](docs/images/dashboard_overview.svg) |
-| Supplier Risk | ![Supplier Risk](docs/images/supplier_risk_chart.svg) |
-| Simulation Impact | ![Simulation](docs/images/simulation_impact.svg) |
-| Network Topology | ![Network](docs/images/supply_network_graph.svg) |
 
 **Technologies Used**
 
