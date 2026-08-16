@@ -208,13 +208,27 @@ jupyter notebook notebooks/energy_supply_chain_analysis.ipynb
 pytest tests/ -v
 ```
 
-**Step 9 — Generate dashboard images and grant presentation (optional)**
+**Step 9 — Generate dashboard images and presentation (optional)**
 
 ```bash
 python scripts/generate_all_assets.py
 ```
 
-This creates PNG charts in `docs/images/` and a PowerPoint deck at `docs/presentations/Critical_Supply_Chain_Resilience_AI.pptx`.
+This creates PNG charts in `docs/images/` and regenerates the PowerPoint deck.
+
+**Prototype Presentation (PowerPoint)**
+
+Download the ready-to-use deck for researchers, companies, and grant audiences:
+
+**[docs/presentations/Critical_Supply_Chain_Resilience_AI.pptx](docs/presentations/Critical_Supply_Chain_Resilience_AI.pptx)**
+
+The presentation includes project overview, business value, architecture, dashboard screenshots, case studies, and collaboration next steps.
+
+Regenerate after updating project content:
+
+```bash
+python scripts/generate_presentation.py
+```
 
 **Quick Reference**
 
@@ -225,7 +239,8 @@ This creates PNG charts in `docs/images/` and a PowerPoint deck at `docs/present
 | Semiconductor notebook | `jupyter notebook notebooks/semiconductor_case_study.ipynb` |
 | Energy notebook | `jupyter notebook notebooks/energy_supply_chain_analysis.ipynb` |
 | Run tests | `pytest tests/ -v` |
-| Generate slides | `python scripts/generate_all_assets.py` |
+| Generate slides | `python scripts/generate_presentation.py` |
+| Download presentation | `docs/presentations/Critical_Supply_Chain_Resilience_AI.pptx` |
 | Dashboard PNG charts | `python scripts/generate_dashboard_images.py` |
 
 **How to Get Prototype Dashboard Images**

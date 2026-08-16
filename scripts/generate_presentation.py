@@ -1,4 +1,4 @@
-"""Generate a PowerPoint presentation for researchers and grant funders."""
+"""Generate a PowerPoint presentation for researchers, companies, and grant funders."""
 
 from __future__ import annotations
 
@@ -55,6 +55,7 @@ def _add_title_slide(prs: Presentation) -> None:
     sub_tf = sub.text_frame
     sub_tf.text = (
         "AI-Powered Decision Support for Critical Manufacturing Supply Chains\n"
+        "Prototype Overview for Researchers, Industry, and Funders\n"
         "David Ishimwe Ruberamitwe"
     )
     for paragraph in sub_tf.paragraphs:
@@ -93,6 +94,28 @@ def build_presentation() -> Path:
     prs.slide_height = Inches(7.5)
 
     _add_title_slide(prs)
+
+    _add_bullet_slide(
+        prs,
+        "Who This Project Is For",
+        [
+            "Researchers — reproducible supply chain resilience analytics and benchmark networks.",
+            "Companies — supplier risk visibility, disruption stress testing, and mitigation planning.",
+            "Grant funders & policymakers — evidence-based view of critical infrastructure vulnerability.",
+            "Open platform designed for collaboration, pilots, and sector-specific extensions.",
+        ],
+    )
+
+    _add_bullet_slide(
+        prs,
+        "Business Value for Companies",
+        [
+            "Identify single-source suppliers before a disruption becomes a production crisis.",
+            "Quantify service-level impact of factory outages, supplier failures, and logistics delays.",
+            "Compare mitigation options using simulation and ranked diversification recommendations.",
+            "Reduce uncertainty in strategic sourcing, inventory planning, and continuity decisions.",
+        ],
+    )
 
     _add_bullet_slide(
         prs,
@@ -158,6 +181,17 @@ def build_presentation() -> Path:
         ],
     )
 
+    _add_bullet_slide(
+        prs,
+        "Prototype Scope (Current vs Planned)",
+        [
+            "Current: synthetic semiconductor and energy networks with full analytics pipeline.",
+            "Current: CLI demo, Streamlit dashboard, Jupyter case studies, and resilience metrics.",
+            "Planned: integration with company ERP, logistics, and macroeconomic data feeds.",
+            "Planned: PyTorch prediction models and OR-Tools mathematical optimization.",
+        ],
+    )
+
     image_slides = [
         (
             "Interactive Prototype Dashboard",
@@ -170,9 +204,19 @@ def build_presentation() -> Path:
             "Composite KPI view: risk index, supplier dependency, scenario impact, and mitigation priorities.",
         ),
         (
+            "Supplier Disruption Risk",
+            IMAGES_DIR / "supplier_risk_chart.png",
+            "Supplier risk tiers help prioritize monitoring and alternate sourcing investments.",
+        ),
+        (
             "Simulation & Mitigation Insights",
             IMAGES_DIR / "simulation_impact.png",
             "Baseline vs disrupted throughput across supplier and factory failure scenarios.",
+        ),
+        (
+            "Supply Network Topology",
+            IMAGES_DIR / "supply_network_graph.png",
+            "Graph view of suppliers, factories, and distribution hubs in the benchmark network.",
         ),
     ]
 
@@ -233,11 +277,23 @@ def build_presentation() -> Path:
 
     _add_bullet_slide(
         prs,
-        "Collaboration & Funding Opportunity",
+        "How to Run the Prototype",
         [
-            "Seeking research partnerships, pilot deployments, and grant funding.",
-            "Near-term goals: real-data validation, expanded ML models, and API integration.",
-            "Open to collaborations with universities, national labs, and industry partners.",
+            "Install: pip install -r requirements.txt",
+            "Prepare data: python scripts/prepare_week1_data.py && python scripts/prepare_energy_data.py",
+            "Terminal demo: python examples/semiconductor_supply_chain_demo.py",
+            "Web dashboard: streamlit run dashboard/app.py",
+            "GitHub: github.com/ishimweruberamitwe125/critical-supply-chain-resilience-ai",
+        ],
+    )
+
+    _add_bullet_slide(
+        prs,
+        "Collaboration & Next Steps",
+        [
+            "Industry pilots with anonymized supplier and logistics datasets.",
+            "University research partnerships on resilience metrics and ML models.",
+            "Grant-funded expansion to medical, aerospace, and defense supply networks.",
             "Contact: David Ishimwe Ruberamitwe — ishimwerubera@gmail.com",
         ],
     )
