@@ -84,6 +84,7 @@ critical-supply-chain-resilience-ai
 ├── LICENSE
 ├── CONTRIBUTING.md
 ├── requirements.txt
+├── requirements-planned.txt
 │
 ├── dashboard
 │   └── app.py
@@ -225,6 +226,67 @@ This creates PNG charts in `docs/images/` and a PowerPoint deck at `docs/present
 | Energy notebook | `jupyter notebook notebooks/energy_supply_chain_analysis.ipynb` |
 | Run tests | `pytest tests/ -v` |
 | Generate slides | `python scripts/generate_all_assets.py` |
+| Dashboard PNG charts | `python scripts/generate_dashboard_images.py` |
+
+**How to Get Prototype Dashboard Images**
+
+The repository includes static dashboard visuals under `docs/images/`. You can view the committed SVG/PNG files immediately, regenerate high-resolution PNGs from live pipeline data, or use the interactive Streamlit dashboard.
+
+**Option A — View images already in the repo**
+
+Open these files locally or view them in the GitHub README:
+
+| File | Description |
+|------|-------------|
+| `docs/images/web_dashboard_preview.png` | Streamlit dashboard preview |
+| `docs/images/dashboard_overview.svg` | Executive KPI overview |
+| `docs/images/supplier_risk_chart.svg` | Supplier disruption risk |
+| `docs/images/simulation_impact.svg` | Baseline vs disrupted throughput |
+| `docs/images/demand_forecast.svg` | Distribution hub demand forecast |
+| `docs/images/supply_network_graph.svg` | Supply network topology |
+
+**Option B — Regenerate PNG charts from live prototype data**
+
+After completing Steps 1–4 above (venv, install, prepare data), run:
+
+```bash
+python scripts/generate_dashboard_images.py
+```
+
+This executes the full analytics pipeline and saves these PNG files:
+
+- `docs/images/dashboard_overview.png`
+- `docs/images/supplier_risk_chart.png`
+- `docs/images/simulation_impact.png`
+- `docs/images/demand_forecast.png`
+- `docs/images/supply_network_graph.png`
+- `docs/images/web_dashboard_preview.png`
+
+**Option C — Use the interactive web dashboard**
+
+```bash
+streamlit run dashboard/app.py
+```
+
+Select **Semiconductor** or **Energy Infrastructure** in the sidebar. The dashboard renders interactive Plotly charts for risk, simulation, mitigations, network map, and forecast.
+
+**Option D — Generate charts inside Jupyter**
+
+Open either case study notebook and run the final cell:
+
+```bash
+jupyter notebook notebooks/semiconductor_case_study.ipynb
+```
+
+The notebook cell calling `save_dashboard_images()` writes PNG files to `docs/images/`.
+
+**Option E — Generate dashboard images and grant presentation together**
+
+```bash
+python scripts/generate_all_assets.py
+```
+
+This runs the dashboard image generator and creates `docs/presentations/Critical_Supply_Chain_Resilience_AI.pptx`.
 
 **Dashboard Gallery**
 
@@ -254,40 +316,62 @@ Visual outputs from the prototype decision-support platform.
 
 ![Supply Network Graph](docs/images/supply_network_graph.svg)
 
-Regenerate high-resolution PNG versions from live pipeline data:
+**Prototype Scope vs Planned Scope**
 
-```bash
-python scripts/generate_dashboard_images.py
-```
+This repository contains a **working research prototype**, not the full production system described in the long-term project vision. The table below clarifies what is implemented today versus what remains on the roadmap.
+
+| Area | Implemented now | Planned |
+|------|----------------|---------|
+| Supply network graph model | Yes — NetworkX graphs from CSV | Live ERP/logistics ingestion |
+| Resilience metrics | Yes — risk index, dependency, propagation, recovery | Calibrated enterprise metrics |
+| Disruption simulation | Yes — supplier outages, factory shutdowns | Multi-period and trade-policy scenarios |
+| Disruption prediction | Prototype — sklearn on synthetic supplier features | PyTorch models on historical disruption data |
+| Demand forecasting | Prototype — baseline hub-capacity forecast | Time-series models with external signals |
+| Network optimization | Prototype — heuristic mitigation ranking | Google OR-Tools constrained optimization |
+| Case studies | Semiconductor and energy notebooks | Medical, aerospace, defense networks |
+| Dashboards and reporting | CLI, Streamlit, Jupyter, PowerPoint generator | Production API and digital twin integration |
+| Trained model artifacts | Not yet — folders reserved under `models/` | Saved predictive and optimization models |
+| External data sources | Synthetic CSV benchmarks only | Economic indicators and live logistics feeds |
 
 **Technologies Used**
 
-The project uses modern data science and optimization tools, including:
+**Implemented in the prototype**
 
 - Python
-- Scikit-learn
-- PyTorch
 - Pandas and NumPy
 - NetworkX
-- Google OR-Tools
-- Jupyter Notebooks
-- Streamlit
+- Scikit-learn
+- Matplotlib
 - Plotly
+- Streamlit
+- Jupyter Notebooks
 - python-pptx
+- pytest
+
+**Planned (documented, not yet integrated)**
+
+- PyTorch — deep learning for advanced prediction
+- Google OR-Tools — mathematical optimization for supplier and routing decisions
+
+Optional planned dependencies are listed in `requirements-planned.txt`.
 
 **Example Applications**
 
-**Semiconductor Supply Chains**
+**Semiconductor Supply Chains** *(implemented)*
 
 Analyze supplier dependencies and simulate disruptions affecting semiconductor fabrication networks.
 
-**Energy Infrastructure Equipment**
+**Energy Infrastructure Equipment** *(implemented)*
 
 Evaluate alternative supplier configurations for critical energy infrastructure components.
 
-**Medical Device Manufacturing**
+**Medical Device Manufacturing** *(planned)*
 
 Identify supply chain vulnerabilities affecting healthcare equipment production.
+
+**Transportation, Aerospace, and Defense Manufacturing** *(planned)*
+
+Extend the framework to additional critical manufacturing sectors described in the project vision.
 
 **Policy and Strategic Impact**
 

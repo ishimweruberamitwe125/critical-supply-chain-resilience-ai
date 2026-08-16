@@ -23,7 +23,7 @@ Critical manufacturing supply chains—semiconductors, energy equipment, medical
 
 ## Week 1 contribution
 
-Week 1 delivers a transparent, synthetic semiconductor network and graph tooling. This creates a reproducible foundation for later analytics that can inform resilience policy discussions with data rather than anecdote alone.
+Week 1 delivers a transparent, synthetic semiconductor network and graph tooling. The current prototype extends this with resilience analytics, simulation, dashboards, and an energy-sector case study. These outputs support research demos and policy discussions with data rather than anecdote alone, while advanced ML and optimization integrations remain on the roadmap.
 
 ## Ethical considerations
 

@@ -1,10 +1,15 @@
 # Methodology
 
-This document defines data schemas and analytical methodology for the project.
+This document defines data schemas, analytical methodology, and the current prototype scope for the project.
 
-## Week 1 datasets
+## Datasets
 
-Week 1 uses a **synthetic semiconductor supply network** for development and demos.
+The prototype includes two synthetic benchmark networks:
+
+| Network | Raw data | Processed data | Use case |
+|---------|----------|----------------|----------|
+| Semiconductor | `data/raw/` | `data/processed/` | Chip fabrication and packaging |
+| Energy infrastructure | `data/raw/energy/` | `data/processed/energy/` | Grid transformers and deployment |
 
 ### `suppliers.csv`
 
@@ -48,28 +53,32 @@ Week 1 uses a **synthetic semiconductor supply network** for development and dem
 3. Add directed edges with flow attributes.
 4. Validate referential integrity (every edge endpoint must exist).
 
-## Week 1 analytics
+## Prototype analytics pipeline
 
-The Week 1 example script reports:
+| Stage | Method | Output |
+|-------|--------|--------|
+| Resilience metrics | Graph centrality, dependency HHI, propagation paths | Network risk index, node risk table |
+| Disruption prediction | Scikit-learn logistic regression on supplier features | Risk tiers (low / medium / high) |
+| Simulation | Capacity-based throughput model with node failures | Service level, bottlenecks, recovery estimate |
+| Optimization | Rank single-source mitigations by simulated service impact | Prioritized action list |
+| Logistics | NetworkX shortest path by lead time | Fastest factory-to-hub route |
 
-- Node and edge counts
-- In-degree and out-degree per node
-- Single-source edge count
-- Average supplier reliability and geopolitical risk
+## Implemented vs planned methodology
 
-These baseline statistics feed resilience metrics in Week 2.
-
-## Later-week methodology (preview)
-
-| Week | Focus |
-|------|-------|
-| 2 | Resilience metrics (dependency, propagation, risk index) |
-| 3 | Disruption simulation engine |
-| 4–5 | Forecasting and disruption prediction models |
-| 6–7 | OR-Tools optimization and end-to-end demos |
+| Capability | Prototype status | Notes |
+|------------|------------------|-------|
+| Resilience metrics | Implemented | Risk index, dependency, propagation, recovery |
+| Disruption simulation | Implemented | Supplier outages and factory shutdowns |
+| Disruption prediction | Prototype | Uses synthetic labels, not historical disruption data |
+| Demand forecasting | Prototype | Baseline forecast from hub capacity |
+| Network optimization | Prototype | Heuristic mitigation ranking |
+| OR-Tools optimization | Planned | Full constrained supplier selection |
+| PyTorch models | Planned | Deep learning for time-series and graph signals |
+| Economic indicator feeds | Planned | External macro/geopolitical data integration |
 
 ## Assumptions
 
 - Synthetic data is deterministic and small enough for local development.
 - Reliability and geopolitical risk are normalized proxies, not live intelligence feeds.
 - Capacities and lead times are monthly averages unless otherwise noted.
+- Prototype outputs support research demos and decision-support exploration, not operational deployment.

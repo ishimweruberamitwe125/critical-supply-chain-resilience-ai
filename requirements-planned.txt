@@ -1,0 +1,3 @@
+# Planned research dependencies (future modules)
+torch>=2.1.0
+ortools>=9.8.0
