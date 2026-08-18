@@ -94,6 +94,7 @@ critical-supply-chain-resilience-ai
 │
 ├── docs
 │   ├── images
+│   ├── architecture.md
 │   ├── dashboard-user-guide.md
 │   ├── live-dashboard.md
 │   ├── methodology.md

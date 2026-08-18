@@ -1,0 +1,10 @@
+#!/bin/sh
+# Strip Cursor attribution from commit messages.
+MSG_FILE="$1"
+[ -f "$MSG_FILE" ] || exit 0
+
+grep -vi '^co-authored-by:.*cursor' "$MSG_FILE" | \
+grep -vi '^made-with:.*cursor' | \
+grep -vi '^signed-off-by:.*cursor' > "$MSG_FILE.tmp"
+mv "$MSG_FILE.tmp" "$MSG_FILE"
+exit 0
