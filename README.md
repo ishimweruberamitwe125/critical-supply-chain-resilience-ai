@@ -1,5 +1,8 @@
 **Critical Supply Chain Resilience AI**
 
+**Live Dashboard:** [https://critical-supply-chain-resilience-ai-by7jr2dvkuxue3doembshj.streamlit.app/](https://critical-supply-chain-resilience-ai-by7jr2dvkuxue3doembshj.streamlit.app/)  
+Interactive prototype — no install required. User guide: [docs/dashboard-user-guide.md](docs/dashboard-user-guide.md)
+
 ---
 
 **Overview**
@@ -91,7 +94,8 @@ critical-supply-chain-resilience-ai
 │
 ├── docs
 │   ├── images
-│   ├── architecture.md
+│   ├── dashboard-user-guide.md
+│   ├── live-dashboard.md
 │   ├── methodology.md
 │   ├── policy-impact.md
 │
@@ -189,13 +193,21 @@ This runs the full pipeline: graph → metrics → prediction → simulation →
 
 **Step 6 — Launch the live interactive dashboard**
 
+**Option A — Open the public live app (recommended)**
+
+**[Live Dashboard](https://critical-supply-chain-resilience-ai-by7jr2dvkuxue3doembshj.streamlit.app/)**
+
+Step-by-step usage: [docs/dashboard-user-guide.md](docs/dashboard-user-guide.md)
+
+**Option B — Run locally**
+
 ```bash
 streamlit run streamlit_app.py
 ```
 
 Your browser opens at `http://localhost:8501`. This is the **live dashboard** — charts are rebuilt from the analytics pipeline when you change industry or refresh data.
 
-> **Note for reviewers:** PNG images in the README and PowerPoint are **static screenshots**. The live dashboard is interactive and runs the same pipeline code. See [docs/live-dashboard.md](docs/live-dashboard.md) for local run and public deployment steps.
+> **Note for reviewers:** PNG images in the README and PowerPoint are **static screenshots**. The [live dashboard](https://critical-supply-chain-resilience-ai-by7jr2dvkuxue3doembshj.streamlit.app/) is interactive and runs the same pipeline code. See [docs/live-dashboard.md](docs/live-dashboard.md) for deployment details.
 
 **Step 7 — Open Jupyter case studies (optional)**
 
@@ -237,7 +249,8 @@ python scripts/generate_presentation.py
 | Goal | Command |
 |------|---------|
 | Terminal demo | `python examples/semiconductor_supply_chain_demo.py` |
-| Web dashboard (live) | `streamlit run streamlit_app.py` |
+| Web dashboard (live) | [Open live app](https://critical-supply-chain-resilience-ai-by7jr2dvkuxue3doembshj.streamlit.app/) |
+| Dashboard user guide | [docs/dashboard-user-guide.md](docs/dashboard-user-guide.md) |
 | Semiconductor notebook | `jupyter notebook notebooks/semiconductor_case_study.ipynb` |
 | Energy notebook | `jupyter notebook notebooks/energy_supply_chain_analysis.ipynb` |
 | Run tests | `pytest tests/ -v` |
@@ -251,9 +264,9 @@ python scripts/generate_presentation.py
 
 | Type | Description |
 |------|-------------|
-| **Live dashboard** | Interactive Streamlit app — `streamlit run streamlit_app.py` |
-| **Static PNGs** | Exported snapshots in `docs/images/` for README and PowerPoint |
-| **Public live URL** | Deploy with [Streamlit Community Cloud](https://share.streamlit.io) using main file `streamlit_app.py` — see [docs/live-dashboard.md](docs/live-dashboard.md) |
+| **Live dashboard** | Interactive app — [open live URL](https://critical-supply-chain-resilience-ai-by7jr2dvkuxue3doembshj.streamlit.app/) or `streamlit run streamlit_app.py` |
+| **User guide** | [docs/dashboard-user-guide.md](docs/dashboard-user-guide.md) — how to use each tab |
+| **Public live URL** | [critical-supply-chain-resilience-ai-by7jr2dvkuxue3doembshj.streamlit.app](https://critical-supply-chain-resilience-ai-by7jr2dvkuxue3doembshj.streamlit.app/) |
 
 **Reply to “Are the dashboard screenshots live?”**
 
