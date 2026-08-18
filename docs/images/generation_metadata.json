@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-08-18T23:14:57.993376+00:00",
+  "source": "live_prototype_pipeline",
+  "network": "semiconductor",
+  "note": "PNG exports generated from run_prototype_pipeline() \u2014 same engine as the Streamlit dashboard.",
+  "files": [
+    "dashboard_overview.png",
+    "supplier_risk_chart.png",
+    "simulation_impact.png",
+    "demand_forecast.png",
+    "supply_network_graph.png",
+    "web_dashboard_preview.png"
+  ]
+}

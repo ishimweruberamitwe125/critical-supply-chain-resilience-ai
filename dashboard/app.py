@@ -64,6 +64,14 @@ def load_graph(industry: str):
 
 def main() -> None:
     st.sidebar.title("Navigation")
+    st.sidebar.info(
+        "**Live dashboard** — charts are built from the analytics pipeline on each run. "
+        "README/PowerPoint PNGs are static exports of this same engine."
+    )
+    if st.sidebar.button("Refresh pipeline data"):
+        st.cache_data.clear()
+        st.rerun()
+
     industry = st.sidebar.selectbox("Industry network", list(INDUSTRY_OPTIONS.keys()))
     config = INDUSTRY_OPTIONS[industry]
 

@@ -210,17 +210,27 @@ def build_web_dashboard_preview(report: PrototypeReport) -> Figure:
 
 
 def save_dashboard_images(output_dir: Path | None = None) -> list[Path]:
-    """Generate and save all dashboard images to docs/images/."""
+    """Generate and save all dashboard images from live pipeline output."""
+    import json
+    from datetime import datetime, timezone
+
+    from scripts.prepare_energy_data import prepare_energy_data
+    from scripts.prepare_week1_data import prepare_processed_data
+
+    prepare_processed_data()
+    prepare_energy_data()
+
     output = output_dir or Path(__file__).resolve().parents[2] / "docs" / "images"
     output.mkdir(parents=True, exist_ok=True)
 
     report = run_prototype_pipeline()
+    graph = build_supply_network()
     figures = {
         "dashboard_overview.png": build_overview_figure(report),
         "supplier_risk_chart.png": build_supplier_risk_figure(report),
         "simulation_impact.png": build_simulation_figure(report),
         "demand_forecast.png": build_demand_forecast_figure(report),
-        "supply_network_graph.png": build_network_graph_figure(),
+        "supply_network_graph.png": build_network_graph_figure(graph),
         "web_dashboard_preview.png": build_web_dashboard_preview(report),
     }
 
@@ -230,5 +240,16 @@ def save_dashboard_images(output_dir: Path | None = None) -> list[Path]:
         figure.savefig(path, dpi=150, bbox_inches="tight", facecolor="white")
         plt.close(figure)
         saved.append(path)
+
+    metadata = {
+        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "source": "live_prototype_pipeline",
+        "network": "semiconductor",
+        "note": "PNG exports generated from run_prototype_pipeline() — same engine as the Streamlit dashboard.",
+        "files": [path.name for path in saved],
+    }
+    metadata_path = output / "generation_metadata.json"
+    metadata_path.write_text(json.dumps(metadata, indent=2), encoding="utf-8")
+    saved.append(metadata_path)
 
     return saved

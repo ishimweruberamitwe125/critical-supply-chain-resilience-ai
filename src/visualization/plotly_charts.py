@@ -103,7 +103,7 @@ def simulation_chart(report: PrototypeReport) -> go.Figure:
         barmode="group",
         height=450,
         yaxis={"title": "Throughput (units/month)"},
-        yaxis2={"title": "Service Level (%)", overlaying="y", side="right", range=[0, 105]},
+        yaxis2={"title": "Service Level (%)", "overlaying": "y", "side": "right", "range": [0, 105]},
         legend={"orientation": "h", "yanchor": "bottom", "y": 1.02, "x": 0},
     )
     return fig

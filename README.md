@@ -187,13 +187,15 @@ python examples/semiconductor_supply_chain_demo.py
 
 This runs the full pipeline: graph → metrics → prediction → simulation → optimization and prints a report in the terminal.
 
-**Step 6 — Launch the interactive web dashboard**
+**Step 6 — Launch the live interactive dashboard**
 
 ```bash
-streamlit run dashboard/app.py
+streamlit run streamlit_app.py
 ```
 
-Your browser will open the dashboard. Use the sidebar to switch between **Semiconductor** and **Energy Infrastructure** networks. Explore tabs for risk analysis, simulations, mitigations, network map, and demand forecast.
+Your browser opens at `http://localhost:8501`. This is the **live dashboard** — charts are rebuilt from the analytics pipeline when you change industry or refresh data.
+
+> **Note for reviewers:** PNG images in the README and PowerPoint are **static screenshots**. The live dashboard is interactive and runs the same pipeline code. See [docs/live-dashboard.md](docs/live-dashboard.md) for local run and public deployment steps.
 
 **Step 7 — Open Jupyter case studies (optional)**
 
@@ -235,7 +237,7 @@ python scripts/generate_presentation.py
 | Goal | Command |
 |------|---------|
 | Terminal demo | `python examples/semiconductor_supply_chain_demo.py` |
-| Web dashboard | `streamlit run dashboard/app.py` |
+| Web dashboard (live) | `streamlit run streamlit_app.py` |
 | Semiconductor notebook | `jupyter notebook notebooks/semiconductor_case_study.ipynb` |
 | Energy notebook | `jupyter notebook notebooks/energy_supply_chain_analysis.ipynb` |
 | Run tests | `pytest tests/ -v` |
@@ -245,9 +247,19 @@ python scripts/generate_presentation.py
 
 **How to Get Prototype Dashboard Images**
 
-The repository includes static dashboard visuals under `docs/images/`. You can view the committed SVG/PNG files immediately, regenerate high-resolution PNGs from live pipeline data, or use the interactive Streamlit dashboard.
+**Static vs live**
 
-**Option A — View images already in the repo**
+| Type | Description |
+|------|-------------|
+| **Live dashboard** | Interactive Streamlit app — `streamlit run streamlit_app.py` |
+| **Static PNGs** | Exported snapshots in `docs/images/` for README and PowerPoint |
+| **Public live URL** | Deploy with [Streamlit Community Cloud](https://share.streamlit.io) using main file `streamlit_app.py` — see [docs/live-dashboard.md](docs/live-dashboard.md) |
+
+**Reply to “Are the dashboard screenshots live?”**
+
+> The README and slide images are static exports. The live prototype dashboard runs the same analytics pipeline interactively—you can switch industries, run what-if simulations, and refresh results in real time.
+
+**Option A — View static PNGs already in the repo**
 
 Open these PNG files locally or view them in the GitHub README (PNG is used because GitHub does not reliably render SVG in README files):
 
@@ -277,10 +289,16 @@ This executes the full analytics pipeline and saves these PNG files:
 - `docs/images/supply_network_graph.png`
 - `docs/images/web_dashboard_preview.png`
 
-**Option C — Use the interactive web dashboard**
+**Option C — Use the live interactive dashboard**
 
 ```bash
-streamlit run dashboard/app.py
+streamlit run streamlit_app.py
+```
+
+Or on Windows:
+
+```powershell
+.\scripts\run_live_dashboard.ps1
 ```
 
 Select **Semiconductor** or **Energy Infrastructure** in the sidebar. The dashboard renders interactive Plotly charts for risk, simulation, mitigations, network map, and forecast.
