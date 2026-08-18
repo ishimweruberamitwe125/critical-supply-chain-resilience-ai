@@ -81,7 +81,7 @@ def main() -> None:
     st.title("Critical Supply Chain Resilience AI")
     st.caption(config["caption"])
 
-    st.plotly_chart(resilience_kpi_row(report), use_container_width=True)
+    st.plotly_chart(resilience_kpi_row(report), use_container_width=True, key="chart_kpi_row")
 
     col1, col2, col3, col4 = st.columns(4)
     col1.metric("Suppliers", report.network_summary["supplier_count"])
@@ -96,17 +96,17 @@ def main() -> None:
     with tab_overview:
         left, right = st.columns([1.1, 1])
         with left:
-            st.plotly_chart(node_risk_chart(report), use_container_width=True)
+            st.plotly_chart(node_risk_chart(report), use_container_width=True, key="chart_overview_node_risk")
         with right:
-            st.plotly_chart(mitigation_chart(report), use_container_width=True)
+            st.plotly_chart(mitigation_chart(report), use_container_width=True, key="chart_overview_mitigation")
         st.dataframe(report.resilience.node_risks, use_container_width=True)
 
     with tab_risk:
-        st.plotly_chart(supplier_risk_chart(report), use_container_width=True)
+        st.plotly_chart(supplier_risk_chart(report), use_container_width=True, key="chart_supplier_risk")
         st.dataframe(report.disruption_predictions, use_container_width=True)
 
     with tab_sim:
-        st.plotly_chart(simulation_chart(report), use_container_width=True)
+        st.plotly_chart(simulation_chart(report), use_container_width=True, key="chart_simulation")
         sim_rows = []
         for result in report.simulations:
             sim_rows.append(
@@ -125,9 +125,9 @@ def main() -> None:
         node_options = {
             f"{data.get('name', node)} ({node})": node for node, data in graph.nodes(data=True)
         }
-        selected_label = st.selectbox("Disrupt node", list(node_options.keys()))
-        severity = st.slider("Severity", 0.0, 1.0, 1.0, 0.05)
-        if st.button("Run Custom Simulation", type="primary"):
+        selected_label = st.selectbox("Disrupt node", list(node_options.keys()), key="sim_disrupt_node")
+        severity = st.slider("Severity", 0.0, 1.0, 1.0, 0.05, key="sim_severity")
+        if st.button("Run Custom Simulation", type="primary", key="sim_run_button"):
             custom = run_simulation(
                 graph,
                 DisruptionScenario(
@@ -142,16 +142,16 @@ def main() -> None:
             c3.metric("Baseline Throughput", f"{custom.baseline_throughput:,.0f}")
 
     with tab_mitigate:
-        st.plotly_chart(mitigation_chart(report), use_container_width=True)
+        st.plotly_chart(mitigation_chart(report), use_container_width=True, key="chart_mitigation_tab")
         for item in report.mitigations:
             st.info(f"**{item.priority}. {item.action}** — {item.rationale}")
 
     with tab_network:
-        st.plotly_chart(network_graph_plotly(graph), use_container_width=True)
+        st.plotly_chart(network_graph_plotly(graph), use_container_width=True, key="chart_network_map")
         st.dataframe(report.resilience.single_source_exposure, use_container_width=True)
 
     with tab_forecast:
-        st.plotly_chart(demand_forecast_chart(report), use_container_width=True)
+        st.plotly_chart(demand_forecast_chart(report), use_container_width=True, key="chart_demand_forecast")
         st.dataframe(report.demand_forecast, use_container_width=True)
 
 
